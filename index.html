@@ -7,9 +7,12 @@
   <title>My Library</title>
 </head>
 <body>
-  <header>
-    <h1>My Library</h1>
-  </header>
+  <section class="header-section">
+    <header>
+      <h1>My Library</h1>
+    </header>
+  </section>
+
 
   <section class="main-content">
     <section class="book-list">
@@ -19,9 +22,33 @@
     </section>
 
     <section class="side-bar">
-      <div>
-        <h3>Add a new book!</h3>
-      </div>
+      <form class="book-form">
+        <fieldset>
+          <legend>Book Information</legend>
+          <div class="book-name">
+            <label for="book-name">Book Name:</label>
+            <input type="text" id="book-name" name="book-name">
+          </div>
+
+          <div class="book-author">
+            <label for="book-author">Author:</label>
+            <input type="text" id="book-author" name="book-author">
+          </div>
+          
+          <div class="book-pages">
+            <label for="book-pages">Pages:</label>
+            <input type="number" id="book-pages" name="book-pages">
+          </div>
+
+          <div class="book-status">
+            <label for="book-status">Has been read?</label>
+            <input type="checkbox" id="book-status" name="book-status">
+          </div>
+        </fieldset>
+        <div class="submit-button">
+          <input type="submit" id="submit" value="Add new book!">
+        </div>
+      </form>
     </section>
   </section>
 
