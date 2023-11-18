@@ -3,20 +3,30 @@
 :root {
   margin: 0;
   padding: 0;
+  --background-main: rgba(65, 97, 204, 0.4);
 }
 
 html {
-  background-image: url('assets/mesh-gradient.png');
-  filter: hue-rotate(-45deg);
+  background-image:
+  linear-gradient(
+    to bottom,
+    rgba(1, 107, 133, 0.5),
+    rgba(129, 52, 52, 0.5)
+  );
 }
 
 body {
+  margin: 0;
   font-family: 'Fjalla One', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
+  margin-top: 8px;
   text-align: center;
-  background-color: rgba(112, 124, 233, 0.5);
+  background-color: var(--background-main);
   color: white;
   width: 25%;
   text-shadow: 2px 2px black;
@@ -37,21 +47,54 @@ h3 {
 .main-content {
   display: grid;
   grid-template-columns: 4fr 2fr;
-  justify-items: center;
+  gap: 25px;
+  justify-items: end;
+  flex: 1;
 }
 
 .book-list {
   display: grid;
-  width: 80%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   height: fit-content;
+  padding-top: 50px;
+  padding-left: 50px;
+  justify-self: start;
+  gap: 25px;
+}
+
+.book {
+  color: white;
+  text-shadow: 1px 1px black;
+  display: grid;
+  grid-template-rows: repeat(5, max-content);
+  background-color: var(--background-main);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.452);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.book-title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.book-image {
+  padding: 5px 0;
+}
+
+.book-info {
+  font-size: 16px;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
 }
 
 .side-bar {
+  visibility: hidden;
   margin-top: 20px;
-  margin-right: 20px;
-  width: fit-content;
+  margin-right: 50px;
   height: fit-content;
-  background-color: rgba(112, 124, 233, 0.4);
+  background-color: var(--background-main);
   border-radius: 30px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.452);
   color: white;
@@ -100,4 +143,11 @@ input:not(input[type="checkbox"]) {
   display: flex;
   justify-content: center;
   padding-top: 10px;
+}
+
+footer {
+  color: white;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  margin-bottom: 10px;
 }
