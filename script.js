@@ -28,5 +28,11 @@ const submitForm = document.getElementById('submit');
 
 submitForm.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log();
-})
+    let bookName = document.getElementById('book-name');
+    let bookAuthor = document.getElementById('book-author');
+    let bookPages = document.getElementById('book-author');
+    let bookStatus = document.getElementById('book-status');
+    let newBook = new Book(bookName.value, bookAuthor.value, bookPages.value, bookStatus.value);
+    myLibrary.push(newBook);
+    console.log(myLibrary);
+});
